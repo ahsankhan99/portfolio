@@ -1,15 +1,24 @@
+import Image from 'next/image'
 import React from 'react'
 
 const Hero = () => {
     return (
-        <div className='font-space max-w-[1240px] m-auto p-4'>
-            <div>
-                <h1 className='font-bold text-7xl text-text1'>Nice to meet you!
-                    <br />
-                    I'm <span className='underline underline-offset-[15px] decoration-4 decoration-accent'>Ahsan Khan</span>
-                </h1>
+        <>
+            <img src='/pattern-rings.svg' className='absolute top-[90px] right-auto left-0  -translate-x-[40%] ' />
+            <div className='font-space max-w-[1240px] m-auto p-4'>
+                <div>
+                    <h1 className='text-center sm:text-left font-bold text-7xl text-text1'>Nice to meet you!
+                        <br />
+                        I'm <span className='underline underline-offset-[15px] decoration-4 decoration-accent'>Ahsan Khan</span>
+                    </h1>
+                    <p className='text-center sm:text-start text-xl text-text2 my-14 max-w-[600px]'>Based in Pakistan, I'm a web developer with a passion for building accessible and engaging websites that users love.</p>
+                </div>
+                <a href="#contact" className='flex justify-center sm:justify-start font-black text-text1 text-lg uppercase underline underline-offset-[10px] decoration-2 decoration-accent hover:text-accent ease-in-out duration-300 '>
+                    Contact me
+                </a>
+                <div className='border-bottom-solid border-text1 border-b-2 my-16' />
             </div>
-        </div>
+        </>
     )
 }
 
