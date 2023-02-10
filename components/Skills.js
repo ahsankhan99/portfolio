@@ -3,23 +3,23 @@ import React from 'react'
 const Skills = () => {
     return (
         <div className='relative'>
-            <div className='justify-center max-w-[1240px] m-auto p-4 grid lg:grid-cols-3 md:grid-cols-2 gap-5 overflow-x-hidden'>
-                <h2 className='text-text1 text-center text-5xl font-bold p-8 '>
+            <div className='justify-center max-w-[1240px] font-space m-auto p-4 grid lg:grid-cols-3 md:grid-cols-2 gap-5 overflow-x-hidden'>
+                <h2 className='text-text1 text-center text-5xl font-black p-8 '>
                     HTML
                 </h2>
-                <h2 className='text-text1 text-center text-5xl font-bold p-8'>
+                <h2 className='text-text1 text-center text-5xl font-black p-8'>
                     CSS
                 </h2>
-                <h2 className='text-text1 text-center text-5xl font-bold p-8'>
+                <h2 className='text-text1 text-center text-5xl font-black p-8'>
                     JavaScript
                 </h2>
-                <h2 className='text-text1 text-center text-5xl font-bold p-8'>
+                <h2 className='text-text1 text-center text-5xl font-black p-8'>
                     ReactJS
                 </h2>
-                <h2 className='text-text1 text-center text-5xl font-bold p-8'>
+                <h2 className='text-text1 text-center text-5xl font-black p-8'>
                     NextJS
                 </h2>
-                <h2 className='text-text1 text-center text-5xl font-bold p-8'>
+                <h2 className='text-text1 text-center text-5xl font-black p-8'>
                     TailwindCSS
                 </h2>
             </div>

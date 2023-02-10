@@ -5,6 +5,7 @@
 html {
     background-color: hsl(0, 0%, 4%);
     overflow-x: hidden;
+    scroll-behavior: smooth;
 }
 
 body {
