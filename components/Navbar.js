@@ -1,7 +1,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
-import { GithubIcon, LinkedinIcon } from './SvgIcon'
+import { GithubIcon, LinkedinIcon, MailIcon } from './SvgIcon'
 
 
 const Navbar = () => {
@@ -18,12 +18,9 @@ const Navbar = () => {
                     <Link href="https://www.linkedin.com/in/ahsan-khan99/" target='_blank' className='mx-2'>
                         <LinkedinIcon className='hover:fill-accent ease-in-out duration-300 w-8 h-8' />
                     </Link>
-                    {/* <Link href="https://github.com/ahsankhan99" target='_blank' className='mx-2'>
-                        <Image src='/icons8-github.svg' width={30} height={30} alt='Github Icon' className='hover:fill-accent ease-in-out duration-300' />
-                    </Link> */}
-                    {/* <Link href="https://www.linkedin.com/in/ahsan-khan99/" target='_blank' className='mx-2'>
-                        <Image src='/icons8-linkedin.svg' width={30} height={30} alt='Linkedin Icon' className='hover:fill-accent ease-in-out duration-300' />
-                    </Link> */}
+                    <Link href="mailto:imkhanahsan@gmail.com" className='mx-2'>
+                        <MailIcon className='hover:fill-accent ease-in-out duration-300 w-8 h-8' />
+                    </Link>
                 </div>
             </div>
         </>
