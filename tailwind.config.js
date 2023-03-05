@@ -8,7 +8,7 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        space: ['"Space Grotesk"', 'sans']
+        space: ['"Space Grotesk"', 'Raleway', 'Helvetica', 'Arial', 'sans-serif']
       },
       colors: {
         'bg-body': 'hsl(0, 0%, 8%)',

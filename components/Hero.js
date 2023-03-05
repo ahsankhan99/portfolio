@@ -5,7 +5,7 @@ import Button from './Button'
 const Hero = () => {
     return (
         <>
-            <img src='/pattern-rings.svg' className='absolute top-[90px] right-auto left-0  -translate-x-[40%] ' />
+            <img src='/pattern-rings.svg' alt='bg ring pattern' className='absolute top-[90px] right-auto left-0  -translate-x-[40%] ' />
             <div className='font-space max-w-[1240px] m-auto p-4'>
                 <div>
                     <h1 className='text-center sm:text-left font-bold text-7xl text-text1'>Nice to meet you!

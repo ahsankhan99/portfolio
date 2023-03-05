@@ -30,7 +30,7 @@ const Contact = () => {
                     </form>
                 </div>
             </div >
-            <img src='/pattern-rings.svg' className='absolute bottom-[2rem] left-0 right-auto -translate-x-[50%] ' />
+            <img src='/pattern-rings.svg' alt='bg ring pattern' className='absolute bottom-[2rem] left-0 right-auto -translate-x-[50%] ' />
             <div className=' max-w-[1240px] mx-auto p-4'>
                 <div className='border-bottom-solid border-text1 border-b-2 mt-8 my-4 justify-center' />
             </div>
