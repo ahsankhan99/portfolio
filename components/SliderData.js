@@ -3,20 +3,26 @@ export const SliderData = {
         [
             {
                 image:
-                    '/lifestyle.png',
+                    '/lifestyle/lifestyle.png',
             },
             {
                 image:
-                    '/lifestyle-1.png',
+                    '/lifestyle/lifestyle-1.png',
             },
             {
                 image:
-                    '/lifestyle-2.png',
+                    '/lifestyle/lifestyle-2.png',
             },
             {
                 image:
-                    '/lifestyle-3.png',
+                    '/lifestyle/lifestyle-3.png',
             },
         ],
+    smilecare: [
+        {
+            image: '/smilecare/smilecare.png'
+        }
+    ]
 
 };
+

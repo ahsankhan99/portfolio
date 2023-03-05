@@ -14,9 +14,6 @@ const Hero = () => {
                     </h1>
                     <p className='text-center sm:text-start text-xl text-text2 my-14 max-w-[600px]'>Based in Pakistan, I'm a web developer with a passion for building accessible, engaging and visually appealing websites.</p>
                 </div>
-                {/* <a href="#contact" className='flex justify-center sm:justify-start font-black text-text1 text-lg uppercase underline underline-offset-[10px] decoration-2 decoration-accent hover:text-accent ease-in-out duration-300 '>
-                    Contact me
-                </a> */}
                 <Button title="Contact me" href="#contact" />
                 <div className='border-bottom-solid border-text1 border-b-2 my-16' />
             </div>

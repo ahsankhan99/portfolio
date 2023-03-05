@@ -24,9 +24,9 @@ const Slider = ({ slides }) => {
             <div className='relative justify-center flex p-4'>
                 {slides.map((slide, index) => {
                     return (
-                        <div key={index} className={index === current ? 'opacity-1 ease-in duration-1000' : 'opacity-0'} >
+                        <div key={index} className={index === current ? 'opacity-1 ease-in duration-1000 ' : 'opacity-0'} >
                             <SlArrowLeft size={50} className='absolute top-[40%] left-[0px] text-white/70 cursor-pointer select-none z-[2] m-5 opacity-20' onClick={prevSlide} />
-                            {index === current && <Image src={slide.image} className='m-auto' width={1440} height={600} alt='/' />}
+                            {index === current && <Image src={slide.image} className='m-auto object-contain h-[420px]' width={1440} height={600} alt='/' />}
                             <SlArrowRight size={50} className='absolute top-[40%] right-[0px] text-white/70 cursor-pointer select-none z-[2] m-5 opacity-20' onClick={nextSlide} />
                         </div>
                     )
