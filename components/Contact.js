@@ -1,6 +1,8 @@
 import React, { useState } from 'react'
 import db from '../firebase';
-import { addDoc, collection, doc, setDoc } from "firebase/firestore";
+import { addDoc, collection } from "firebase/firestore";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const Contact = () => {
     const [formData, setFormData] = useState({});
@@ -14,10 +16,32 @@ const Contact = () => {
     const handleFormSubmit = async (event) => {
         event.preventDefault();
         try {
-            const docRef = await addDoc(collection(db, "messages"), formData);
+            await addDoc(collection(db, "messages"), formData);
+            setFormData({ name: '', email: '', message: '' });
+            toast.success('✅ Message Sent!', {
+                position: "top-right",
+                autoClose: 5000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "light",
+            });;
         } catch (e) {
             console.log(e)
+            toast.error('📛 An Error Occurred!', {
+                position: "top-right",
+                autoClose: 5000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "light",
+            });
         }
+
     };
 
     return (
@@ -33,9 +57,9 @@ const Contact = () => {
                 </div>
                 <div>
                     <form className='flex flex-col '>
-                        <input onChange={onChange} type="text" id="name" name="name" placeholder='Name' className='font-bold text-md uppercase px-3 pb-4 bg-bg-body2 border-b-[1px] border-text1 my-4 text-text1' />
-                        <input onChange={onChange} type="text" id="email" name="email" placeholder='Email' className='font-bold text-md uppercase px-3 pb-4 bg-bg-body2 border-b-[1px] border-text1 my-4 text-text1' />
-                        <textarea onChange={onChange} rows="4" cols="50" name="message" id="message" placeholder="Message" className='font-bold text-md uppercase px-3 pb-4 bg-bg-body2 border-b-[1px] border-text1 text-text1 my-4' />
+                        <input onChange={onChange} value={formData.name} type="text" id="name" name="name" placeholder='Name' className='outline-none font-bold text-md uppercase px-3 pb-4 bg-bg-body2 border-b-[1px] border-text1 my-4 text-text1' />
+                        <input onChange={onChange} value={formData.email} type="text" id="email" name="email" placeholder='Email' className='outline-none font-bold text-md uppercase px-3 pb-4 bg-bg-body2 border-b-[1px] border-text1 my-4 text-text1' />
+                        <textarea onChange={onChange} value={formData.message} rows="4" cols="50" name="message" id="message" placeholder="Message" className='outline-none font-bold text-md uppercase px-3 pb-4 bg-bg-body2 border-b-[1px] border-text1 text-text1 my-4' />
                         <button
                             type='submit'
                             className="my-5 self-end flex justify-center font-space items-center sm:justify-start font-bold text-text1 text-lg uppercase underline underline-offset-[10px] decoration-2 decoration-accent hover:text-accent ease-in-out duration-300 "
@@ -49,6 +73,7 @@ const Contact = () => {
             <div className=' max-w-[1240px] mx-auto p-4'>
                 <div className='border-bottom-solid border-text1 border-b-2 mt-8 my-4 justify-center' />
             </div>
+            <ToastContainer />
         </div >
     )
 }
