@@ -18,7 +18,7 @@ const Contact = () => {
     const handleFormSubmit = async (event) => {
         event.preventDefault();
         if (!formData.name || !formData.email || !formData.message) {
-            setError('Please enter fill in all the fields')
+            setError('Please fill in all the fields')
             return;
         }
         setError('');
