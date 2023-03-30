@@ -1,7 +1,25 @@
-import React from 'react'
-import Button from './Button'
+import React, { useState } from 'react'
+import db from '../firebase';
+import { addDoc, collection, doc, setDoc } from "firebase/firestore";
 
 const Contact = () => {
+    const [formData, setFormData] = useState({});
+    const onChange = (e) => {
+        setFormData((prevState) => ({
+            ...prevState,
+            [e.target.name]: e.target.value,
+        }));
+    };
+
+    const handleFormSubmit = async (event) => {
+        event.preventDefault();
+        try {
+            const docRef = await addDoc(collection(db, "messages"), formData);
+        } catch (e) {
+            console.log(e)
+        }
+    };
+
     return (
         <div id='contact' className='relative bg-bg-body2 pt-10'>
             <div className='max-w-[1240px] m-auto p-4 grid grid-cols-1 lg:grid-cols-2 space-x-16'>
@@ -14,17 +32,14 @@ const Contact = () => {
                     </p>
                 </div>
                 <div>
-                    <form action="" method="post" className='flex flex-col '>
-                        <input type="text" id="name" name="name" placeholder='Name' className='font-bold text-md uppercase px-3 pb-4 bg-bg-body2 border-b-[1px] border-text1 my-4 text-text1' />
-                        <input type="text" id="email" name="email" placeholder='Email' className='font-bold text-md uppercase px-3 pb-4 bg-bg-body2 border-b-[1px] border-text1 my-4 text-text1' />
-                        <textarea rows="4" cols="50" name="message" id="message" placeholder="Message" className='font-bold text-md uppercase px-3 pb-4 bg-bg-body2 border-b-[1px] border-text1 text-text1 my-4' />
+                    <form className='flex flex-col '>
+                        <input onChange={onChange} type="text" id="name" name="name" placeholder='Name' className='font-bold text-md uppercase px-3 pb-4 bg-bg-body2 border-b-[1px] border-text1 my-4 text-text1' />
+                        <input onChange={onChange} type="text" id="email" name="email" placeholder='Email' className='font-bold text-md uppercase px-3 pb-4 bg-bg-body2 border-b-[1px] border-text1 my-4 text-text1' />
+                        <textarea onChange={onChange} rows="4" cols="50" name="message" id="message" placeholder="Message" className='font-bold text-md uppercase px-3 pb-4 bg-bg-body2 border-b-[1px] border-text1 text-text1 my-4' />
                         <button
                             type='submit'
                             className="my-5 self-end flex justify-center font-space items-center sm:justify-start font-bold text-text1 text-lg uppercase underline underline-offset-[10px] decoration-2 decoration-accent hover:text-accent ease-in-out duration-300 "
-                            onClick={(e) => {
-                                e.preventDefault();
-                                alert("No functionality here!")
-                            }}>
+                            onClick={handleFormSubmit}>
                             Send Message
                         </button>
                     </form>
@@ -34,7 +49,7 @@ const Contact = () => {
             <div className=' max-w-[1240px] mx-auto p-4'>
                 <div className='border-bottom-solid border-text1 border-b-2 mt-8 my-4 justify-center' />
             </div>
-        </div>
+        </div >
     )
 }
 

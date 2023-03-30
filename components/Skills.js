@@ -22,6 +22,15 @@ const Skills = () => {
                 <h2 className='text-text1 text-center text-5xl font-black p-8'>
                     TailwindCSS
                 </h2>
+                <h2 className='text-text1 text-center text-5xl font-black p-8'>
+                    React Native
+                </h2>
+                <h2 className='text-text1 text-center text-5xl font-black p-8'>
+                    C#
+                </h2>
+                <h2 className='text-text1 text-center text-5xl font-black p-8'>
+                    Unity
+                </h2>
             </div>
             <img src='/pattern-rings.svg' alt='bg ring pattern' className='absolute bottom-[10rem] right-0 left-auto translate-x-[50%] overflow-x-hidden' />
             <div className=' max-w-[1240px] m-auto p-4'>
