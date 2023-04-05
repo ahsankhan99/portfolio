@@ -34,7 +34,7 @@ const Contact = () => {
                 draggable: true,
                 progress: undefined,
                 theme: "light",
-            });;
+            });
         } catch (e) {
             console.log(e)
             toast.error('📛 An Error Occurred!', {
@@ -88,4 +88,4 @@ const Contact = () => {
     )
 }
 
-export default Contact
+export default Contact;

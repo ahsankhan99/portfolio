@@ -22,6 +22,17 @@ export const SliderData = {
         {
             image: '/smilecare/smilecare.png'
         }
+    ],
+    goh: [
+        {
+            image: '/goh/goh-1.png'
+        },
+        {
+            image: '/goh/goh-2.png'
+        },
+        {
+            image: '/goh/goh-3.png'
+        }
     ]
 
 };
