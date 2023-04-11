@@ -33,6 +33,12 @@ export const SliderData = {
         {
             image: '/goh/goh-3.png'
         }
+    ],
+    iat: [
+        {
+            image: '/ip-address-tracker/ip-address-tracker.png'
+        },
+
     ]
 
 };

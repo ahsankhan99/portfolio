@@ -16,6 +16,7 @@ const Projects = () => {
                 <Project title='SmileCare' stack={['ReactJS', 'TailwindCSS']} slides={SliderData.smilecare} />
                 <Project title='Lifestyle - Ecommerce' stack={['HTML', 'CSS', 'JS', 'Bootstrap', 'PHP', 'MySQL']} slides={SliderData.lifestyle} />
                 <Project title='Ghost of Helheim (FYP)' stack={['C#', 'Unity']} slides={SliderData.goh} />
+                <Project title='IP Address Tracker' stack={['Next', 'TailwindCSS', 'TypeScript']} slides={SliderData.goh} />
             </div>
         </div>
     )
