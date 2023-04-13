@@ -15,7 +15,8 @@ const Projects = () => {
             <div className='grid sm:grid-cols-2 text-center gap-5 text-text1'>
                 <Project title='SmileCare' stack={['ReactJS', 'TailwindCSS']} slides={SliderData.smilecare} />
                 <Project title='Lifestyle - Ecommerce' stack={['HTML', 'CSS', 'JS', 'Bootstrap', 'PHP', 'MySQL']} slides={SliderData.lifestyle} />
-                <Project title='IP Address Tracker' stack={['Next', 'TailwindCSS', 'TypeScript']} slides={SliderData.iat} />
+                <Project link='https://shortly-url-shortner.vercel.app/' title='Shortly' stack={['NextJS', 'TypeScript', 'TailwindCSS']} slides={SliderData.shortly} />
+                <Project link='https://ip-address-tracker-nu.vercel.app/' title='IP Address Tracker' stack={['NextJS', 'TypeScript', 'TailwindCSS']} slides={SliderData.iat} />
                 <Project title='Ghost of Helheim (FYP)' stack={['C#', 'Unity']} slides={SliderData.goh} />
             </div>
         </div>

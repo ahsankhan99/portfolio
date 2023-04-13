@@ -5,13 +5,16 @@ const Skills = () => {
         <div className='relative'>
             <div className='justify-center max-w-[1240px] font-space m-auto p-4 grid lg:grid-cols-3 md:grid-cols-2 gap-5 overflow-x-hidden'>
                 <h2 className='text-text1 text-center text-5xl font-black p-8 '>
-                    HTML
+                    HTML/CSS
                 </h2>
-                <h2 className='text-text1 text-center text-5xl font-black p-8'>
+                {/* <h2 className='text-text1 text-center text-5xl font-black p-8'>
                     CSS
-                </h2>
+                </h2> */}
                 <h2 className='text-text1 text-center text-5xl font-black p-8'>
                     JavaScript
+                </h2>
+                <h2 className='text-text1 text-center text-5xl font-black p-8'>
+                    TypeScript
                 </h2>
                 <h2 className='text-text1 text-center text-5xl font-black p-8'>
                     ReactJS

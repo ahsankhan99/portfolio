@@ -39,6 +39,12 @@ export const SliderData = {
             image: '/ip-address-tracker/ip-address-tracker.png'
         },
 
+    ],
+    shortly: [
+        {
+            image: '/shortly/shortly.png'
+        },
+
     ]
 
 };
