@@ -68,7 +68,7 @@ const Contact = () => {
                         <input onChange={onChange} value={formData.name} type="text" id="name" name="name" placeholder='Name' className='outline-none font-bold text-md uppercase px-3 pb-4 bg-bg-body2 border-b-[1px] border-text1 my-4 text-text1' />
                         <input onChange={onChange} value={formData.email} type="email" id="email"
                             name="email" placeholder='Email' autoComplete="email"
-                            required className='outline-none font-bold text-md uppercase px-3 pb-4 bg-bg-body2 border-b-[1px] border-text1 my-4 text-text1' />
+                            required className='outline-none font-bold text-md uppercase px-3 pb-4 bg-bg-body2 border-b-[1px] border-t-0 border-l-0 border-r-0 border-text1 my-4 text-text1' />
                         <textarea onChange={onChange} value={formData.message} rows="4" cols="50" name="message" id="message" placeholder="Message" className='outline-none font-bold text-md uppercase px-3 pb-4 bg-bg-body2 border-b-[1px] border-text1 text-text1 my-4' />
                         <button
                             type='submit'
