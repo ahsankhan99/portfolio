@@ -1,13 +1,13 @@
 import React from 'react'
 import Button from './Button'
 import Project from './Project'
-import { SliderData } from './SliderData';
+import { SliderData } from '../data/SliderData';
 
 const Projects = () => {
     return (
         <div className='max-w-[1240px] mx-auto pb-20'>
             <div className='flex flex-col sm:flex-row sm:items-center sm:justify-between p-4'>
-                <h1 className='text-8xl font-space text-text1 font-semibold text-center mb-10 sm:mb-0'>
+                <h1 className='sm:text-8xl text-7xl font-space text-text1 font-semibold text-center mb-10 sm:mb-0'>
                     Projects
                 </h1>
                 <Button title="Contact me" href='#contact' className='mb-5' />

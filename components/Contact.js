@@ -5,7 +5,7 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 const Contact = () => {
-    const [formData, setFormData] = useState({});
+    const [formData, setFormData] = useState({ name: '', email: '', message: '' });
     const [error, setError] = useState();
 
     const onChange = (e) => {
@@ -33,7 +33,7 @@ const Contact = () => {
                 pauseOnHover: true,
                 draggable: true,
                 progress: undefined,
-                theme: "light",
+                theme: "dark",
             });
         } catch (e) {
             console.log(e)
@@ -45,7 +45,7 @@ const Contact = () => {
                 pauseOnHover: true,
                 draggable: true,
                 progress: undefined,
-                theme: "light",
+                theme: "dark",
             });
         }
 
@@ -55,7 +55,7 @@ const Contact = () => {
         <div id='contact' className='relative bg-bg-body2 pt-10'>
             <div className='max-w-[1240px] m-auto p-4 grid grid-cols-1 lg:grid-cols-2 space-x-16'>
                 <div>
-                    <h1 className='text-8xl font-space text-text1 font-semibold mb-5 sm:mb-0 text-center lg:text-start'>
+                    <h1 className='sm:text-8xl text-7xl  font-space text-text1 font-semibold mb-5 sm:mb-0 text-center lg:text-start'>
                         Contact
                     </h1 >
                     <p className='text-xl text-text2 my-7 font-space text-center lg:text-start'>
@@ -68,7 +68,7 @@ const Contact = () => {
                         <input onChange={onChange} value={formData.name} type="text" id="name" name="name" placeholder='Name' className='outline-none font-bold text-md uppercase px-3 pb-4 bg-bg-body2 border-b-[1px] border-text1 my-4 text-text1' />
                         <input onChange={onChange} value={formData.email} type="email" id="email"
                             name="email" placeholder='Email' autoComplete="email"
-                            required className='outline-none font-bold text-md uppercase px-3 pb-4 bg-bg-body2 border-b-[1px] border-t-0 border-l-0 border-r-0 border-text1 my-4 text-text1' />
+                            required className='outline-none font-bold text-md uppercase px-3 pb-4 bg-bg-body2 border-b-[1px] border-text1 my-4 text-text1' />
                         <textarea onChange={onChange} value={formData.message} rows="4" cols="50" name="message" id="message" placeholder="Message" className='outline-none font-bold text-md uppercase px-3 pb-4 bg-bg-body2 border-b-[1px] border-text1 text-text1 my-4' />
                         <button
                             type='submit'
