@@ -2,11 +2,12 @@ import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
 import { GithubIcon, LinkedinIcon, MailIcon } from './SvgIcon'
+import { Fade } from 'react-reveal'
 
 
 const Navbar = () => {
     return (
-        <>
+        <Fade delay={1000} duration={2000} ssrReveal={true}>
             <div className='max-w-[1240px] m-auto flex flex-col sm:flex-row justify-between items-center p-4'>
                 <Link href='/'>
                     <h1 className='font-bold text-3xl font-space text-text1 hover:text-accent ease-in-out duration-300'>ahsankhan</h1>
@@ -23,7 +24,7 @@ const Navbar = () => {
                     </Link>
                 </div>
             </div>
-        </>
+        </Fade>
     )
 }
 

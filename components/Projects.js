@@ -2,6 +2,7 @@ import React from 'react'
 import Button from './Button'
 import Project from './Project'
 import { SliderData } from '../data/SliderData';
+import Fade from 'react-reveal/Fade';
 
 const Projects = () => {
     return (
@@ -13,11 +14,13 @@ const Projects = () => {
                 <Button title="Contact me" href='#contact' className='mb-5' />
             </div>
             <div className='grid sm:grid-cols-2 text-center gap-5 text-text1'>
-                <Project title='SmileCare' stack={['ReactJS', 'TailwindCSS']} slides={SliderData.smilecare} />
-                <Project title='Lifestyle - Ecommerce' stack={['HTML', 'CSS', 'JS', 'Bootstrap', 'PHP', 'MySQL']} slides={SliderData.lifestyle} />
-                <Project link='https://shortly-url-shortner.vercel.app/' title='Shortly' stack={['NextJS', 'TypeScript', 'TailwindCSS']} slides={SliderData.shortly} />
-                <Project link='https://ip-address-tracker-nu.vercel.app/' title='IP Address Tracker' stack={['NextJS', 'TypeScript', 'TailwindCSS']} slides={SliderData.iat} />
-                <Project title='Ghost of Helheim (FYP)' stack={['C#', 'Unity']} slides={SliderData.goh} />
+                <Fade top distance="5%">
+                    <Project title='SmileCare' stack={['ReactJS', 'TailwindCSS']} slides={SliderData.smilecare} />
+                    <Project title='Lifestyle - Ecommerce' stack={['HTML', 'CSS', 'JS', 'Bootstrap', 'PHP', 'MySQL']} slides={SliderData.lifestyle} />
+                    <Project link='https://shortly-url-shortner.vercel.app/' title='Shortly' stack={['NextJS', 'TypeScript', 'TailwindCSS']} slides={SliderData.shortly} />
+                    <Project link='https://ip-address-tracker-nu.vercel.app/' title='IP Address Tracker' stack={['NextJS', 'TypeScript', 'TailwindCSS']} slides={SliderData.iat} />
+                    <Project title='Ghost of Helheim (FYP)' stack={['C#', 'Unity']} slides={SliderData.goh} />
+                </Fade>
             </div>
         </div>
     )

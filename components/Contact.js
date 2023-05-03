@@ -3,9 +3,12 @@ import db from '../firebase';
 import { addDoc, collection } from "firebase/firestore";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import Shake from 'react-reveal/Shake';
+import Fade from 'react-reveal/Fade';
 
 const Contact = () => {
     const [formData, setFormData] = useState({ name: '', email: '', message: '' });
+    const [errorBoolean, setErrorBoolean] = useState(false);
     const [error, setError] = useState();
 
     const onChange = (e) => {
@@ -18,6 +21,7 @@ const Contact = () => {
     const handleFormSubmit = async (event) => {
         event.preventDefault();
         if (!formData.name || !formData.email || !formData.message) {
+            setErrorBoolean(!errorBoolean);
             setError('Please fill in all the fields')
             return;
         }
@@ -52,19 +56,24 @@ const Contact = () => {
     };
 
     return (
+
         <div id='contact' className='relative bg-bg-body2 pt-10'>
             <div className='max-w-[1240px] m-auto p-4 grid grid-cols-1 lg:grid-cols-2 space-x-16'>
                 <div>
-                    <h1 className='sm:text-8xl text-7xl  font-space text-text1 font-semibold mb-5 sm:mb-0 text-center lg:text-start'>
-                        Contact
-                    </h1 >
-                    <p className='text-xl text-text2 my-7 font-space text-center lg:text-start'>
-                        I would love to hear about your project and how I could help. Please fill in the form, and I'll get back to you as soon as possible.
-                    </p>
+                    <Fade ssrReveal={true} left>
+                        <h1 className='sm:text-8xl text-7xl  font-space text-text1 font-semibold mb-5 sm:mb-0 text-center lg:text-start'>
+                            Contact
+                        </h1 >
+                        <p className='text-xl text-text2 my-7 font-space text-center lg:text-start'>
+                            I would love to hear about your project and how I could help. Please fill in the form, and I'll get back to you as soon as possible.
+                        </p>
+                    </Fade>
                 </div>
                 <div>
                     <form onSubmit={handleFormSubmit} className='flex flex-col '>
-                        <p className="my-2 self-start flex justify-center font-space items-center sm:justify-start font-bold text-red-600 text-lg uppercase underline underline-offset-[5px] decoration-2 decoration-red-600">{error}</p>
+                        <Shake spy={errorBoolean}>
+                            <p className="my-2 self-start flex justify-center font-space items-center sm:justify-start font-bold text-red-600 text-lg uppercase underline underline-offset-[5px] decoration-2 decoration-red-600" >{error}</p>
+                        </Shake>
                         <input onChange={onChange} value={formData.name} type="text" id="name" name="name" placeholder='Name' className='outline-none font-bold text-md uppercase px-3 pb-4 bg-bg-body2 border-b-[1px] border-text1 my-4 text-text1' />
                         <input onChange={onChange} value={formData.email} type="email" id="email"
                             name="email" placeholder='Email' autoComplete="email"
