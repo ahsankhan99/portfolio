@@ -28,7 +28,8 @@ const Contact = () => {
         }
         setError('');
 
-        emailjs.sendForm(process.env.NEXT_PUBLIC_SERVICEID, process.env.NEXT_PUBLIC_TEMPLATEID, form.current, process.env.NEXT_PUBLIC_PUBLICKEY)
+        emailjs.sendForm(process.env.NEXT_PUBLIC_SERVICEID, process.env.NEXT_PUBLIC_TEMPLATEID, form.current, 'jFh91luNGQjvsdCBf')
+            // emailjs.sendForm(process.env.NEXT_PUBLIC_SERVICEID, process.env.NEXT_PUBLIC_TEMPLATEID, form.current, process.env.NEXT_PUBLIC_PUBLICKEY)
             .then((result) => {
                 console.log(result.text);
                 setFormData({ name: '', email: '', message: '' });
