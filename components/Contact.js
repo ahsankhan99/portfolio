@@ -42,7 +42,7 @@ const Contact = () => {
                     progress: undefined,
                     theme: "dark",
                 });
-            }, (error) => {
+            }).catch((error) => {
                 console.log(error.text);
                 toast.error('📛 An Error Occurred!', {
                     position: "top-right",
@@ -53,8 +53,8 @@ const Contact = () => {
                     draggable: true,
                     progress: undefined,
                     theme: "dark",
-                });
-            });
+                })
+            })
     };
 
     return (
