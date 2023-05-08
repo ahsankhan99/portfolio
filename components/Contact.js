@@ -1,15 +1,16 @@
-import React, { useState } from 'react'
-import db from '../firebase';
-import { addDoc, collection } from "firebase/firestore";
+import React, { useState, useRef } from 'react'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { motion } from "framer-motion"
 import { fadeIn } from '@/framer/variants'
+import emailjs from '@emailjs/browser';
 
 const Contact = () => {
     const [formData, setFormData] = useState({ name: '', email: '', message: '' });
     const [errorBoolean, setErrorBoolean] = useState(false);
     const [error, setError] = useState();
+
+    const form = useRef();
 
     const onChange = (e) => {
         setFormData((prevState) => ({
@@ -26,33 +27,34 @@ const Contact = () => {
             return;
         }
         setError('');
-        try {
-            await addDoc(collection(db, "messages"), formData);
-            setFormData({ name: '', email: '', message: '' });
-            toast.success('✅ Message Sent!', {
-                position: "top-right",
-                autoClose: 5000,
-                hideProgressBar: false,
-                closeOnClick: true,
-                pauseOnHover: true,
-                draggable: true,
-                progress: undefined,
-                theme: "dark",
-            });
-        } catch (e) {
-            console.log(e)
-            toast.error('📛 An Error Occurred!', {
-                position: "top-right",
-                autoClose: 5000,
-                hideProgressBar: false,
-                closeOnClick: true,
-                pauseOnHover: true,
-                draggable: true,
-                progress: undefined,
-                theme: "dark",
-            });
-        }
 
+        emailjs.sendForm(process.env.NEXT_PUBLIC_SERVICEID, process.env.NEXT_PUBLIC_TEMPLATEID, form.current, process.env.NEXT_PUBLIC_PUBLICKEY)
+            .then((result) => {
+                console.log(result.text);
+                setFormData({ name: '', email: '', message: '' });
+                toast.success('✅ Message Sent!', {
+                    position: "top-right",
+                    autoClose: 5000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: undefined,
+                    theme: "dark",
+                });
+            }, (error) => {
+                console.log(error.text);
+                toast.error('📛 An Error Occurred!', {
+                    position: "top-right",
+                    autoClose: 5000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: undefined,
+                    theme: "dark",
+                });
+            });
     };
 
     return (
@@ -68,7 +70,7 @@ const Contact = () => {
                     </p>
                 </div>
                 <motion.div variants={fadeIn('up', 0.1)} initial='hidden' whileInView={'show'} viewport={{ once: false, amount: 0.5 }} >
-                    <form onSubmit={handleFormSubmit} className='flex flex-col '>
+                    <form form ref={form} onSubmit={handleFormSubmit} className='flex flex-col '>
                         <p className="my-2 self-start flex justify-center font-space items-center sm:justify-start font-bold text-red-600 text-lg uppercase underline underline-offset-[5px] decoration-2 decoration-red-600" >{error}</p>
                         <input onChange={onChange} value={formData.name} type="text" id="name" name="name" placeholder='Name' className='outline-none font-bold text-md uppercase px-3 pb-4 bg-bg-body2 border-b-[1px] border-text1 my-4 text-text1' />
                         <input onChange={onChange} value={formData.email} type="email" id="email"
@@ -77,8 +79,7 @@ const Contact = () => {
                         <textarea onChange={onChange} value={formData.message} rows="4" cols="50" name="message" id="message" placeholder="Message" className='outline-none font-bold text-md uppercase px-3 pb-4 bg-bg-body2 border-b-[1px] border-text1 text-text1 my-4' />
                         <button
                             type='submit'
-                            className="my-5 self-end flex justify-center font-space items-center sm:justify-start font-bold text-text1 text-lg uppercase underline underline-offset-[10px] decoration-2 decoration-accent hover:text-accent ease-in-out duration-300 "
-                            onClick={handleFormSubmit}>
+                            className="my-5 self-end flex justify-center font-space items-center sm:justify-start font-bold text-text1 text-lg uppercase underline underline-offset-[10px] decoration-2 decoration-accent hover:text-accent ease-in-out duration-300 ">
                             Send Message
                         </button>
                     </form>
