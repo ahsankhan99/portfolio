@@ -21,6 +21,7 @@ const Contact = () => {
 
     const handleFormSubmit = async (event) => {
         event.preventDefault();
+
         if (!formData.name || !formData.email || !formData.message) {
             setErrorBoolean(!errorBoolean);
             setError('Please fill in all the fields')
@@ -28,10 +29,8 @@ const Contact = () => {
         }
         setError('');
 
-        emailjs.sendForm(process.env.NEXT_PUBLIC_SERVICEID, process.env.NEXT_PUBLIC_TEMPLATEID, form.current, 'jFh91luNGQjvsdCBf')
-            // emailjs.sendForm(process.env.NEXT_PUBLIC_SERVICEID, process.env.NEXT_PUBLIC_TEMPLATEID, form.current, process.env.NEXT_PUBLIC_PUBLICKEY)
+        emailjs.sendForm(process.env.NEXT_PUBLIC_SERVICEID, process.env.NEXT_PUBLIC_TEMPLATEID, form.current, process.env.NEXT_PUBLIC_PUBLICKEY)
             .then((result) => {
-                console.log(result.text);
                 setFormData({ name: '', email: '', message: '' });
                 toast.success('✅ Message Sent!', {
                     position: "top-right",
@@ -44,7 +43,7 @@ const Contact = () => {
                     theme: "dark",
                 });
             }).catch((error) => {
-                console.log(error.text);
+                console.log("hello")
                 toast.error('📛 An Error Occurred!', {
                     position: "top-right",
                     autoClose: 5000,
