@@ -12,3 +12,32 @@ body {
     overflow-x:hidden;
     font-family: sans-serif
  }
+
+ @keyframes bounce {
+    0% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+  
+
+
+  .text-animate-hover {
+    display: inline-block;
+  }
+  
+  .text-animate-hover span {
+    display: inline-block;
+  }
+  
+  .text-animate-hover span:hover {
+    animation: bounce 0.5s infinite;
+    color:hsl(153, 71%, 59%);
+    cursor:crosshair;
+  }
+  
