@@ -3,7 +3,7 @@ import { motion } from "framer-motion"
 import { fadeIn } from '@/framer/variants'
 
 const Skills = () => {
-    const skills = [' HTML/CSS', 'JavaScript', 'TypeScript', 'ReactJS', 'NextJS', 'TailwindCSS', 'React Native', 'C#', 'Unity'];
+    const skills = [' HTML/CSS', 'JavaScript', 'TypeScript', 'ReactJS', 'NextJS', 'TailwindCSS', 'MongoDB', 'NodeJS', 'Express', 'React Native', 'C#', 'Unity'];
     return (
         <div className='max-w-[1240px] mx-auto relative'>
             <div
@@ -12,7 +12,7 @@ const Skills = () => {
                 {skills.map((skill, index) => <motion.h2 variants={fadeIn('down', 0.3)}
                     initial={'hidden'}
                     whileInView={'show'}
-                    viewport={{ once: true, amount: 0.4 }} key={index} className='text-text1 text-center text-5xl font-black p-8 '>{skill}</motion.h2>)}
+                    viewport={{ once: true, amount: 0.4 }} key={index} className='hover:text-accent hover:cursor-crosshair text-text1 text-center text-5xl font-black p-8 '>{skill}</motion.h2>)}
 
 
             </div>

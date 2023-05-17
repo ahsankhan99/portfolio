@@ -24,7 +24,7 @@ const Hero = () => {
 
     return (
         <>
-            <img src='/pattern-rings.svg' alt='bg ring pattern' className='absolute top-[110px] right-auto left-0  -translate-x-[40%] ' />
+            <img src='/pattern-rings.svg' alt='bg ring pattern' className='pointer-events-none absolute top-[110px] right-auto left-0  -translate-x-[40%] ' />
             <div className='font-space max-w-[1240px] mx-auto px-4 py-10'>
 
                 <div>
