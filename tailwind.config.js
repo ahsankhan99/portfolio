@@ -17,8 +17,18 @@ module.exports = {
         'text1': 'hsl(0, 0%, 100%)',
         'text2': 'hsl(0, 0%, 85%)',
         'invalid': 'hsl(7, 100%, 68%)',
-      }
-    }
-  },
-  plugins: [],
+      },
+      keyframes: {
+        shake: {
+          '0%, 100%': { transform: 'translateX(0)' },
+          '10%, 30%, 50%, 70%, 90%': { transform: 'translateX(-5px)' },
+          '20%, 40%, 60%, 80%': { transform: 'translateX(5px)' },
+        },
+      },
+      animation: {
+        shake: 'shake 1s cubic-bezier(0.455, 0.03, 0.515, 0.955) infinite',
+      },
+    },
+    plugins: [],
+  }
 }
