@@ -16,7 +16,7 @@ const Skills = () => {
 
 
             </div>
-            <img src='/pattern-rings.svg' alt='bg ring pattern' className='absolute bottom-[10rem] right-0 left-auto translate-x-[50%] overflow-x-hidden' />
+            <img src='/pattern-rings.svg' alt='bg ring pattern' className='pointer-events-none absolute bottom-[10rem] right-0 left-auto translate-x-[50%] overflow-x-hidden' />
             <div className='m-auto p-4'>
                 <div className='border-bottom-solid border-text1 border-b-2 my-16 py-5 justify-center' />
             </div>
